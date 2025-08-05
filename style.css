@@ -1,0 +1,175 @@
+:root {
+  /* ===============================================
+                      Variables
+   =============================================== */
+  /* 🎨 Paleta de colores */
+  --color-bg: #F9F7F5;
+  --color-btnd: #273029;
+  --color-text: #111111;
+  --color-text-alt: #fafafa;
+  --color-border: #212121;
+
+
+  /* ✍️ Tipografía */
+  --font-family-text: 'Inter', sans-serif, system-ui;
+  --font-family-btn: 'Hind Siliguri', sans-serif, system-ui;
+  --font-family-headings: 'Kanit', sans-serif, system-ui;
+  --font-family-subheadings: 'Kanit', sans-serif, system-ui;
+  --font-size-xsm: 1rem;
+  --font-size-sm: 1.4rem;
+  --font-size-base: 1.6rem;
+  --font-size-md: 2.2rem;
+  --font-size-lg: 3.2rem;
+  --font-size-xlg: 4.8rem;
+
+  --fluid-font-size-small: clamp(var(--font-size-xsm), 4vw, var(--font-size-base));
+  --fluid-font-size-base: clamp(var(--font-size-base), 4vw, var(--font-size-md));
+  --fluid-font-size-large: clamp(var(--font-size-md), 4vw, var(--font-size-lg));
+
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+
+  /* 📐 Espacio */
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+
+  /* 🧱 Extras */
+  --btn_radius: 100vmax;
+  --rounded-corners: .5rem;
+  --shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.1);
+  --border: .1rem solid rgba(0, 0, 0, 0.5);
+  --vertical-area: .1rem;
+  --horizontal-area: .1rem;
+  --debug: .1rem solid red;
+  --fade-overlay: linear-gradient(to bottom in oklab,
+      oklch(0% 0.00 340 / 50%) 0%, 100%, oklch(0% 0.00 200 / 50%) 0% 0%);
+}
+
+/* ===============================================
+                  Fuentes locales
+   =============================================== */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/inter.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('assets/fonts/HindSiliguri-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('assets/fonts/HindSiliguri-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('assets/fonts/HindSiliguri-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('assets/fonts/Kanit-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('assets/fonts/Kanit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('assets/fonts/Kanit-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 🌍 Estilos globales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-base);
+}
+
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color .3s ease-in-out;
+  font-family: var(--font-family-btn);
+
+  &:hover {
+    background-color: var(--color-btnd);
+  }
+
+  &:focus-visible {
+    outline: var(--color-text-alt);
+    background-color: var(--color-btnd);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: var(--font-family-headings);
+  font-size: var(--fluid-font-size-large);
+}
+
+h2 {
+  font-family: var(--font-family-subheadings);
+  font-size: var(--fluid-font-size-base);
+}
+
+p {
+  font-family: var(--font-family-text);
+  font-size: var(--fluid-font-size-small);
+}
+
