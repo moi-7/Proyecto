@@ -1,0 +1,6 @@
+# Copilot ignore file
+# Exclude HTML and CSS files from Copilot suggestions
+*.html
+*.css
+index.html
+style.css
