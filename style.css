@@ -161,19 +161,22 @@ p {
   font-size: var(--fluid-font-size-small);
 }
 
-header{
+header {
   padding: var(--space-lg);
   max-width: 100%;
 }
 
-.navbar, .branding, .enlaces, .aut_botones{
+.navbar,
+.branding,
+.enlaces,
+.aut_botones {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0 var(--space-md);
 }
 
-.branding img{
+.branding img {
   width: 4rem;
   height: 4rem;
   flex-shrink: 0;
@@ -187,7 +190,7 @@ header{
   font-weight: var(--medium);
 }
 
-.enlaces a{
+.enlaces a {
   font-family: var(--font-family-text);
   font-size: var(--fluid-font-size-small);
   color: oklab(from var(--color-text) l a b / 0.7);
@@ -210,12 +213,12 @@ header{
   }
 }
 
-:where(.aut_botones) .btn{
- background-color: transparent;
- border: none;
- cursor: pointer;
- font-family: var(--font-family-btn);
- font-size: var(--fluid-font-size-small);
+:where(.aut_botones) .btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-btn);
+  font-size: var(--fluid-font-size-small);
 }
 
 .btn_login {
@@ -236,7 +239,7 @@ header{
   }
 }
 
- .btn_signup{
+.btn_signup {
   color: var(--color-text-alt);
   background-color: oklab(from var(--color-btnd) l a b / .9);
   padding: var(--space-sm) var(--space-md);
@@ -252,7 +255,7 @@ header{
   }
 }
 
-.aut_botones:has(.btn_login:hover) .btn_signup{
+.aut_botones:has(.btn_login:hover, .btn_login:focus-visible) .btn_signup {
   background-color: transparent;
   color: var(--color-text);
   border-radius: var(--btn_radius);
