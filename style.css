@@ -4,7 +4,7 @@
    =============================================== */
   /* 🎨 Paleta de colores */
   --color-bg: #F9F7F5;
-  --color-btnd: #273029;
+  --color-btnd: #253028;
   --color-text: #111111;
   --color-text-alt: #fafafa;
   --color-border: #212121;
@@ -40,9 +40,7 @@
   --btn_radius: 100vmax;
   --rounded-corners: .5rem;
   --shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.1);
-  --border: .1rem solid rgba(0, 0, 0, 0.5);
-  --vertical-area: .1rem;
-  --horizontal-area: .1rem;
+  --outline: .1rem solid oklab(from var(--color-btnd) l a b / 0.7);
   --debug: .1rem solid red;
   --fade-overlay: linear-gradient(to bottom in oklab,
       oklch(0% 0.00 340 / 50%) 0%, 100%, oklch(0% 0.00 200 / 50%) 0% 0%);
@@ -136,16 +134,6 @@ a {
   text-decoration: none;
   display: inline-block;
   transition: background-color .3s ease-in-out;
-  font-family: var(--font-family-btn);
-
-  &:hover {
-    background-color: var(--color-btnd);
-  }
-
-  &:focus-visible {
-    outline: var(--color-text-alt);
-    background-color: var(--color-btnd);
-  }
 }
 
 img {
@@ -173,3 +161,100 @@ p {
   font-size: var(--fluid-font-size-small);
 }
 
+header{
+  padding: var(--space-lg);
+  max-width: 100%;
+}
+
+.navbar, .branding, .enlaces, .aut_botones{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 var(--space-md);
+}
+
+.branding img{
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.branding .nombre_compañía {
+  font-family: var(--font-family-headings);
+  font-size: var(--fluid-font-size-base);
+  color: var(--color-text);
+  font-weight: var(--medium);
+}
+
+.enlaces a{
+  font-family: var(--font-family-text);
+  font-size: var(--fluid-font-size-small);
+  color: oklab(from var(--color-text) l a b / 0.7);
+  font-weight: var(--regular);
+  transition: all .3s ease-in-out;
+
+
+  &:hover {
+    color: oklab(from var(--color-btnd) l a b / 1);
+    font-weight: var(--bold);
+  }
+
+  &:focus-visible {
+    color: oklab(from var(--color-btnd) l a b / 1);
+    outline: var(--outline);
+    border-radius: var(--btn_radius);
+    padding: var(--space-xs) var(--space-sm);
+    border: none;
+    font-weight: var(--bold);
+  }
+}
+
+:where(.aut_botones) .btn{
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ font-family: var(--font-family-btn);
+ font-size: var(--fluid-font-size-small);
+}
+
+.btn_login {
+  color: var(--color-text);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--btn_radius);
+  outline: var(--outline);
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-btnd);
+    color: var(--color-text-alt);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-btnd);
+    color: var(--color-text-alt);
+  }
+}
+
+ .btn_signup{
+  color: var(--color-text-alt);
+  background-color: oklab(from var(--color-btnd) l a b / .9);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--btn_radius);
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: oklab(from var(--color-btnd) l a b / 1);
+  }
+
+  &:focus-visible {
+    background-color: oklab(from var(--color-btnd) l a b / 1);
+  }
+}
+
+.aut_botones:has(.btn_login:hover) .btn_signup{
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: var(--btn_radius);
+  outline: var(--outline);
+}
