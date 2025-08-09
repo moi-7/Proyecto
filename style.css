@@ -169,7 +169,8 @@ header {
 .navbar,
 .branding,
 .enlaces,
-.aut_botones {
+.aut_botones,
+#inicio {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -179,7 +180,7 @@ header {
 .branding img {
   width: 4rem;
   height: 4rem;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   min-width: 0;
 }
 
@@ -275,8 +276,8 @@ header {
   color: oklab(from var(--color-btnd) l a b / .9);
   font-family: var(--font-family-headings);
   font-weight: var(--medium);
-  font-size: calc(var(--fluid-font-size-large) * 1.7);
-  line-height: calc(var(--space-lg) * 1.7);
+  font-size: calc(var(--fluid-font-size-large) * 1.4);
+  line-height: calc(var(--space-lg) * 1.4);
   letter-spacing: .2rem;
   visibility: hidden;
 }
@@ -313,3 +314,4 @@ header {
     visibility: visible;
   }
 }
+
