@@ -397,6 +397,7 @@ header {
   position-visibility: always;
   margin-inline-start: auto;
   margin-block-start: auto;
+  anchor-name: --figura_id;
 }
 
 .carrusel_texto {
@@ -412,7 +413,11 @@ header {
   margin-block-end: auto;
 }
 
-.carrusel_contenedor::scroll-marker-group{
+
+/* ==============================================
+               Unsuported
+============================================== */
+/* .carrusel_contenedor::scroll-marker-group{
   position: absolute;
   position-anchor: --carrusel_contenedor;
   position-area: center center;
@@ -448,7 +453,7 @@ header {
 
 .carrusel li::scroll-marker:target-current{
   background-color: rgb(255, 201, 74);
-}
+} */
 
 .marker-group-fallback {
   border: none;
@@ -488,4 +493,100 @@ header {
     outline: .1rem solid rgb(255, 255, 255, .5);
   }
 }
+
+#input_buscar_carrusel {
+  position: absolute;
+  position-anchor: --figura_id;
+  position-area: center center;
+  position-visibility: always;
+  border-radius: var(--btn_radius);
+  font-size: var(--fluid-font-size-small);
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 85%;
+  border: none;
+  outline: .1rem solid oklab(from var(--color-btnd) l a b / .5);
+  margin-inline-start: auto;
+  margin-inline-end: .1rem;
+  margin-block-start: auto;
+  anchor-name: --input_search;
+
+  &:focus {
+    outline: .2rem solid oklab(from var(--color-btnd) l a b / .9);
+  }
+
+  &:focus-visible {
+    outline: .2rem solid oklab(from var(--color-btnd) l a b / .9);
+  }
+}
+
+#input_buscar_carrusel::placeholder {
+  font-family: var(--font-family-text);
+  font-size: var(--fluid-font-size-small);
+  font-weight: var(--medium);
+  color: oklab(from var(--color-btnd) l a b / .8);
+}
+
+#input_buscar_carrusel::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#input_buscar_carrusel::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==============================================
+              creating space
+============================================== */
+
+.esqueleto {
+  height: 40rem;
+  width: 108rem;
+  outline: .4rem dotted seagreen;
+  margin-inline: auto;
+  margin-block-end: 5rem;
+}
+
+
 

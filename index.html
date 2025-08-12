@@ -9,16 +9,16 @@
   <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="assets/favicon/site.webmanifest" />
-  <link rel="preload" href="assets/fonts/inter.ttf" as="font" type="font/ttf"  crossorigin>
-  <link rel="preload" href="assets/fonts/Kanit-Medium.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/fonts/HindSiliguri-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/inter.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="assets/fonts/Kanit-Medium.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="assets/fonts/HindSiliguri-Regular.ttf" as="font" type="font/ttf">
   <title>Proyecto</title>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="branding">
-        <a href="#" id="inicio" tabindex="0">
+        <a href="index.html" id="inicio" tabindex="0">
           <img src="assets/isotipo.svg" alt="Logo de la compañia" class="isotipo">
         </a>
         <span class="nombre_compañía">MODÈR</span>
@@ -31,8 +31,8 @@
         </ul>
       </div>
       <div class="aut_botones">
-        <button class="btn btn_login">Login</button>
-        <button class="btn btn_signup">Create an account</button>
+        <a class="btn btn_login" href="login-page.html">Login</a>
+        <a class="btn btn_signup" href="login-page.html">Create an account</a>
       </div>
     </nav>
   </header>
@@ -58,6 +58,7 @@
         <div class="figuras_contenedor figura_id">
           <img src="assets/bottom-right-shape.svg" alt="">
         </div>
+        <input type="search" name="buscar" id="input_buscar_carrusel" placeholder="SEARCH FOR INSPIRATION">
       </div>
 
       <div class="marker-group-fallback">
@@ -68,9 +69,22 @@
         <a href="#panel_img5" class="carrusel_radio" tabindex="0"></a>
         <a href="#panel_img6" class="carrusel_radio" tabindex="0"></a>
       </div>
+    </section>
+
+    <section id="testimonio">
 
     </section>
+
+
+
+
+
+     <div class="esqueleto"></div>
+     <div class="esqueleto"></div>
+     <div class="esqueleto"></div>
+     <div class="esqueleto"></div>
   </main>
-  <footer></footer>
+  <footer>
+  </footer>
 </body>
 </html>
