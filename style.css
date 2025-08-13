@@ -621,7 +621,11 @@ header {
 }
 
 
-
+.carrusel_testimonio{
+  width: 60%;
+  outline: 1px solid blue;
+  align-self: center;
+}
 
 
 
