@@ -399,6 +399,7 @@ header {
   margin-inline-start: auto;
   margin-block-start: auto;
   anchor-name: --figura_id;
+  transform: rotate(180deg);
 }
 
 .carrusel_texto {
@@ -538,7 +539,20 @@ header {
   appearance: none;
 }
 
+.buscar_icono_contenedor {
+  position: absolute;
+  position-anchor: --input_search;
+  position-area: center center;
+  position-visibility: always;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-inline-start: 70%;
+  margin-block-start: 1%;
+}
 
+#landing:has(#input_buscar_carrusel:focus-visible) .buscar_icono_contenedor {
+  display: none;
+}
 /* ==============================================
                   Testimonio
 ============================================== */
