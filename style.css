@@ -7,8 +7,12 @@
   --color-bg: #F9F7F5;
   --color-btnd: #253028;
   --color-text: #111111;
-  --color-text-alt: #fafafa;
+  --color-text-alt: #FAFAFA;
   --color-border: #212121;
+  --swiss-almond: #E5DACDFF;
+  --quiet-drizzle: #B8D0C1FF;
+  --pale-dogwood: #EBCAC2FF;
+  --canyon-peach: #EDDBCCFF;
 
 
   /* ✍️ Tipografía */
@@ -399,6 +403,7 @@ header {
   margin-inline-start: auto;
   margin-block-start: auto;
   anchor-name: --figura_id;
+  transform: rotate(180deg);
 }
 
 .carrusel_texto {
@@ -538,7 +543,20 @@ header {
   appearance: none;
 }
 
+.buscar_icono_contenedor {
+  position: absolute;
+  position-anchor: --input_search;
+  position-area: center center;
+  position-visibility: always;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-inline-start: 70%;
+  margin-block-start: 1%;
+}
 
+#landing:has(#input_buscar_carrusel:focus-visible) .buscar_icono_contenedor {
+  display: none;
+}
 /* ==============================================
                   Testimonio
 ============================================== */
@@ -558,7 +576,7 @@ header {
  gap: 0 2rem;
  place-items: center start; */
  display: flex;
- gap: 0 1rem;
+ gap: 0 var(--space-lg);
 }
 
 .personas_contenedor{
@@ -590,20 +608,20 @@ header {
   }
 }
 
-.beige {
-  background-color: #e1dacf;
+.swiss-almond {
+  background-color: var(--swiss-almond);
 }
 
-.turquesa {
-  background-color: #becfc2;
+.quiet-drizzle {
+  background-color: var(--quiet-drizzle);
 }
 
-.rosado {
-  background-color: #e2ccc3;
+.pale-dogwood {
+  background-color: var(--pale-dogwood);
 }
 
-.amarillo {
-  background-color: #e8dcce;
+.canyon-peach {
+  background-color: var(--canyon-peach);
 }
 
 .personas_texto{
