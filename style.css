@@ -543,32 +543,32 @@ header {
                   Testimonio
 ============================================== */
 #testimonio{
-  outline: var(--debug);
   padding: 0 12.5% 0 12.5%;
   margin-block-end: var(--space-lg);
 }
 
 .testimonio_contenedor{
  max-width: 108rem;
- /* overflow-y: clip; */
+ overflow-X: clip;
  margin-inline: auto;
- outline: 2px dotted seagreen;
+ /* outline: 2px dotted seagreen;
  display: grid;
- grid: 100% / 3fr 7fr;
+ grid: 100% / 20% 60% 20%;
  grid-auto-flow: column;
- /* place-items: center start; */
+ gap: 0 2rem;
+ place-items: center start; */
+ display: flex;
+ gap: 0 1rem;
 }
 
 .personas_contenedor{
-  outline: 1px dotted blue;
-  max-width: fit-content;
   display: grid;
   grid: 1fr 1fr / 1fr;
   grid-auto-flow: row;
   place-items: center start;
 }
 
-.foto_personas_cotenedor{
+.avatar_personas_cotenedor{
  display: flex;
  flex-flow: row nowrap;
  gap: 0 .5rem;
@@ -617,14 +617,18 @@ header {
 }
 
 .carrusel_testimonio_contenedor{
-  text-align: left;
+  align-self: center;
+  display: grid;
+  grid: 100% / repeat(4, 100%);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 
 .carrusel_testimonio{
-  width: 60%;
-  outline: 1px solid blue;
-  align-self: center;
+  line-height: 2;
+  width: 60ch;
+  text-align: center;
 }
 
 
