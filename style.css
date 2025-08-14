@@ -680,6 +680,10 @@ header {
   width: 60ch;
   text-align: center;
   scroll-snap-align: center;
+
+  & p{
+    font-style: italic;
+  }
 }
 
 #juliet p {
