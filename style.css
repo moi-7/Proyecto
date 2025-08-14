@@ -235,6 +235,10 @@ header {
   cursor: pointer;
   font-family: var(--font-family-btn);
   font-size: calc(var(--fluid-font-size-small) - .2rem);
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .btn_login {
@@ -271,7 +275,8 @@ header {
   }
 }
 
-.aut_botones:has(.btn_login:hover, .btn_login:focus-visible) .btn_signup {
+.aut_botones:has(.btn_login:hover,
+.btn_login:focus-visible) .btn_signup {
   background-color: transparent;
   color: var(--color-text);
   border-radius: var(--btn_radius);
@@ -552,6 +557,10 @@ header {
   height: 2.8rem;
   margin-inline-start: 70%;
   margin-block-start: 1%;
+
+  & img{
+    opacity: 0.5;
+  }
 }
 
 #landing:has(#input_buscar_carrusel:focus-visible) .buscar_icono_contenedor {
@@ -576,6 +585,7 @@ header {
  gap: 0 2rem;
  place-items: center start; */
  display: flex;
+ flex-flow: row nowrap;
  gap: 0 var(--space-lg);
 }
 
@@ -590,6 +600,7 @@ header {
  display: flex;
  flex-flow: row nowrap;
  gap: 0 .5rem;
+ padding: 0 var(--space-xs);
 }
 
 .fondo_personas {
@@ -600,13 +611,26 @@ header {
   min-width: 0;
   align-content: center;
   overflow: clip;
+  transition: transform .3s ease-in-out;
 
-  & img{
+  & img {
     width: 5rem;
     height: 5rem;
     margin-inline: auto;
   }
+
+  &:hover {
+    transform: scale(1.1);
+    outline: .1rem solid oklab(from var(--color-btnd) l a b / 0.9);
+  }
+
+  &:hover:active {
+    transform: scale(1);
+  }
 }
+
+
+
 
 .swiss-almond {
   background-color: var(--swiss-almond);
@@ -634,19 +658,26 @@ header {
   }
 }
 
-.carrusel_testimonio_contenedor{
-  align-self: center;
+.carrusel_testimonio_contenedor {
   display: grid;
   grid: 100% / repeat(4, 100%);
   overflow-x: auto;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 
-.carrusel_testimonio{
+.carrusel_testimonio {
   line-height: 2;
   width: 60ch;
   text-align: center;
+  scroll-snap-align: center;
 }
 
 
