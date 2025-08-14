@@ -4,15 +4,19 @@
 
 :root {
   /* 🎨 Paleta de colores */
-  --color-bg: #F9F7F5;
-  --color-btnd: #253028;
-  --color-text: #111111;
-  --color-text-alt: #FAFAFA;
-  --color-border: #212121;
-  --swiss-almond: #E5DACDFF;
-  --quiet-drizzle: #B8D0C1FF;
-  --pale-dogwood: #EBCAC2FF;
-  --canyon-peach: #EDDBCCFF;
+  --color-bg: oklab(97.913% 0 -0.00011);
+  --color-btnd: lab(18.63% -6.71 3.59);
+  --color-text: oklab(17.764% 0 -0.00002);
+  --color-text-alt: oklab(98.51100000000001% 0 -0.00011);
+  --color-border: oklab(24.776% 0 -0.00003);
+  --swiss-almond: oklab(89.361% 0.00654 0.0202);
+  --swiss-almond-text: oklab(57.07% 0.01568 0.0502);
+  --quiet-drizzle: oklab(83.541% -0.03073 0.0122);
+  --quiet-drizzle-text: oklab(49.557% -0.04706 0.02199); 
+  --pale-dogwood: oklab(86.48% 0.03247 0.02168);
+  --pale-dogwood-text: oklab(62.356% 0.04352 0.03713);
+  --canyon-peach: oklab(90.196% 0.0132 0.02502);
+  --canyon-peach-text: oklab(69.20500000000001% 0.02269 0.06706);
 
 
   /* ✍️ Tipografía */
@@ -235,6 +239,10 @@ header {
   cursor: pointer;
   font-family: var(--font-family-btn);
   font-size: calc(var(--fluid-font-size-small) - .2rem);
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .btn_login {
@@ -271,7 +279,8 @@ header {
   }
 }
 
-.aut_botones:has(.btn_login:hover, .btn_login:focus-visible) .btn_signup {
+.aut_botones:has(.btn_login:hover,
+.btn_login:focus-visible) .btn_signup {
   background-color: transparent;
   color: var(--color-text);
   border-radius: var(--btn_radius);
@@ -552,6 +561,10 @@ header {
   height: 2.8rem;
   margin-inline-start: 70%;
   margin-block-start: 1%;
+
+  & img{
+    opacity: 0.5;
+  }
 }
 
 #landing:has(#input_buscar_carrusel:focus-visible) .buscar_icono_contenedor {
@@ -576,7 +589,7 @@ header {
  gap: 0 2rem;
  place-items: center start; */
  display: flex;
- gap: 0 var(--space-lg);
+ gap: 0 1rem;
 }
 
 .personas_contenedor{
@@ -590,6 +603,7 @@ header {
  display: flex;
  flex-flow: row nowrap;
  gap: 0 .5rem;
+ padding: 0 var(--space-xs);
 }
 
 .fondo_personas {
@@ -600,13 +614,26 @@ header {
   min-width: 0;
   align-content: center;
   overflow: clip;
+  transition: transform .3s ease-in-out;
 
-  & img{
+  & img {
     width: 5rem;
     height: 5rem;
     margin-inline: auto;
   }
+
+  &:hover {
+    transform: scale(1.1);
+    outline: .1rem solid oklab(from var(--color-btnd) l a b / 0.9);
+  }
+
+  &:hover:active {
+    transform: scale(1);
+  }
 }
+
+
+
 
 .swiss-almond {
   background-color: var(--swiss-almond);
@@ -630,25 +657,50 @@ header {
   line-height: 1.5;
 
   & :nth-child(2){
-    font-weight: var(--bold);
+    font-weight: 600;
   }
 }
 
-.carrusel_testimonio_contenedor{
-  align-self: center;
+.carrusel_testimonio_contenedor {
   display: grid;
   grid: 100% / repeat(4, 100%);
   overflow-x: auto;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
-
-.carrusel_testimonio{
+.carrusel_testimonio {
   line-height: 2;
   width: 60ch;
   text-align: center;
+  scroll-snap-align: center;
 }
 
+#juliet p {
+  color: var(--swiss-almond-text);
+  font-weight: var(--medium);
+}
+
+#matthew p {
+  color: var(--quiet-drizzle-text);
+  font-weight: var(--medium);
+}
+
+#sandra p {
+  color: var(--pale-dogwood-text);
+  font-weight: var(--medium);
+}
+
+#andy p {
+  color: var(--canyon-peach-text);
+  font-weight: var(--medium);
+}
 
 
 
