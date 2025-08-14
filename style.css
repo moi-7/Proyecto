@@ -580,6 +580,7 @@ header {
 
 .testimonio_contenedor{
  max-width: 108rem;
+ height: 15rem;
  overflow-X: clip;
  margin-inline: auto;
  /* outline: 2px dotted seagreen;
@@ -589,7 +590,6 @@ header {
  gap: 0 2rem;
  place-items: center start; */
  display: flex;
- gap: 0 1rem;
 }
 
 .personas_contenedor{
@@ -665,7 +665,8 @@ header {
   display: grid;
   grid: 100% / repeat(4, 100%);
   overflow-x: auto;
-  /* scrollbar-width: none; */
+  place-items: center stretch;
+  scrollbar-width: none;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
@@ -677,34 +678,65 @@ header {
 
 .carrusel_testimonio {
   line-height: 2;
-  width: 60ch;
-  text-align: center;
+  max-width: 100%;
+  height: 100%;
   scroll-snap-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  padding-left: 8.30%;
+
+  & h4{
+    width: 48ch;
+    padding-top: .5rem;
+    position: relative;
+    font-family: var(--font-family-text);
+    font-size: var(--fluid-font-size-small);
+    font-weight: calc(var(--bold) - 100);
+  }
+
 
   & p{
     font-style: italic;
+    font-size: calc(var(--fluid-font-size-small) - .3rem);
   }
 }
 
+#juliet > h4::before{
+  content: '""';
+  position: absolute;
+  top: -7%;
+  left: -7%;
+  font-size: var(--font-size-md);
+  color: var(--swiss-almond-text);
+}
+
+#juliet > h4::after{
+  content: '""';
+  position: absolute;
+  bottom: -20%;
+  right: 31%;
+  font-size: var(--font-size-md);
+  color: var(--swiss-almond-text);
+}
+
+
 #juliet p {
   color: var(--swiss-almond-text);
-  font-weight: var(--medium);
 }
 
 #matthew p {
   color: var(--quiet-drizzle-text);
-  font-weight: var(--medium);
 }
 
 #sandra p {
   color: var(--pale-dogwood-text);
-  font-weight: var(--medium);
 }
 
 #andy p {
   color: var(--canyon-peach-text);
-  font-weight: var(--medium);
 }
+
 
 
 
