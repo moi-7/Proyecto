@@ -181,7 +181,7 @@ p {
    =============================================== */
 
 header {
-  padding: 4rem 12.5% 0 12.5%;
+  padding: 3rem 12.5% 0 12.5%;
   max-width: 100%;
 }
 
@@ -302,7 +302,7 @@ header {
   align-items: center;
   justify-content: center;
   color: var(--color-text);
-  margin-block: var(--space-lg);
+  margin-block: var(--space-md);
 }
 
 .titulo_unleash, .titulo_stylish{
@@ -367,6 +367,7 @@ header {
   grid: 1fr / repeat(6, minmax(108rem, 1fr));
   place-items: stretch;
   scrollbar-width: none;
+  border-radius: calc(var(--space-xs) * 10);
   /* display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -633,8 +634,6 @@ header {
 }
 
 
-
-
 .swiss-almond {
   background-color: var(--swiss-almond);
 }
@@ -736,13 +735,6 @@ header {
 #andy p {
   color: var(--canyon-peach-text);
 }
-
-
-
-
-
-
-
 
 
 
