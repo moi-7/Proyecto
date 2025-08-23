@@ -429,85 +429,42 @@ header {
   margin-block-end: auto;
 }
 
-
-/* ==============================================
-               Unsuported
-============================================== */
-/* .carrusel_contenedor::scroll-marker-group{
+.carrusel::scroll-marker-group{
   position: absolute;
   position-anchor: --carrusel_contenedor;
   position-area: center center;
   position-visibility: always;
   margin-inline-start: auto;
   margin-block-end: auto;
-  width: 40rem;
-  height: 20rem;
-  outline: 2px solid red;
-  z-index: 999;
+  padding: var(--space-md) var(--space-lg) 0 0;
   display: flex;
+  gap: 0 .5rem;
   align-items: center;
   justify-content: center;
 }
 
-
-.carrusel li::scroll-marker{
+.carrusel li::scroll-marker {
   content: "";
   width: 1.2rem;
   height: 1.2rem;
+  background-color: transparent;
+  border: .1rem solid oklab(from var(--pale-dogwood) l a b / .5);
   border-radius: 50%;
-  outline: .1rem solid #f0f0f0b3;
+  cursor: pointer;
   flex: 0 0 auto;
   min-width: 0;
 }
 
-.carrusel li::scroll-marker:hover{
-  background-color: #f0f0f0;
-  outline: .1rem solid #ffc94a;
+.carrusel li::scroll-marker:hover {
+  background-color: #e2dacf;
   transform: scale(1.2);
-  transition: transform .3s ease-in-out, outline .3s ease-in-out, background-color .3s ease-in-out;
+  transition: transform .3s ease-in-out, background-color .3s ease-in-out;
 }
 
 .carrusel li::scroll-marker:target-current{
-  background-color: rgb(255, 201, 74);
-} */
-
-.marker-group-fallback {
-  border: none;
-  display: grid;
-  grid: 1fr / repeat(6, 1fr);
-  place-items: center start;
-  position: absolute;
-  position-anchor: --carrusel_contenedor;
-  position-area: center center;
-  position-visibility: always;
-  margin-inline-start: auto;
-  margin-block-end: auto;
-  gap: 1rem;
-  padding: var(--space-md) var(--space-lg) 0 0;
-
-  & .carrusel_radio {
-    width: 1.4rem;
-    height: 1.4rem;
-    background-color: none;
-    outline: .1rem solid rgb(255, 201, 74);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  & .carrusel_radio:hover {
-    background-color: rgb(255, 201, 74);
-    outline: .1rem solid rgb(255, 255, 255, .5);
-  }
-
-  & .carrusel_radio:focus-visible {
-    background-color: rgb(255, 201, 74);
-    outline: .1rem solid rgb(255, 255, 255, .5);
-  }
-
-    & .carrusel_radio:active {
-    background-color: rgb(255, 201, 74);
-    outline: .1rem solid rgb(255, 255, 255, .5);
-  }
+    background-color: #e2dacf;
+    border: none;
+    outline: none;
 }
 
 #input_buscar_carrusel {
