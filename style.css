@@ -498,6 +498,9 @@ header {
   font-size: var(--fluid-font-size-small);
   font-weight: var(--medium);
   color: oklab(from var(--color-btnd) l a b / .8);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 200ms ease, visibility 0s linear 200ms;
 }
 
 #input_buscar_carrusel::-webkit-search-cancel-button {
@@ -519,14 +522,19 @@ header {
   height: 2.8rem;
   margin-inline-start: 70%;
   margin-block-start: 1%;
+  background-color: transparent;
+  border: none;
 
   & img{
     opacity: 0.5;
   }
 }
 
-#landing:has(#input_buscar_carrusel:focus-visible) .buscar_icono_contenedor {
-  display: none;
+
+#input_buscar_carrusel:focus::placeholder,
+#input_buscar_carrusel:focus-visible::placeholder {
+  visibility: hidden;
+  opacity: 0;
 }
 /* ==============================================
                   Testimonio
